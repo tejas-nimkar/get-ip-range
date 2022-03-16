@@ -3,7 +3,7 @@ import { toLong, fromLong } from 'ip';
 import { Address4, Address6 } from 'ip-address';
 
 // Set default max range
-let maxRange = 10000;
+let maxRange = 100000000;
 
 const getIPv4 = (ip: string): Address4 | null => {
   try {
@@ -61,7 +61,7 @@ const getIPRange = (ip1: string, ip2?: string): string[] => {
   if (process.env.MAX_RANGE && isNaN(parseInt(process.env.MAX_RANGE, 10))) {
     throw new Error('MAX_RANGE must be an integer');
   }
-  maxRange = parseInt(process.env.MAX_RANGE || '10000', 10);
+  maxRange = parseInt(process.env.MAX_RANGE || '100000000', 10);
 
   const ip1v4 = getIPv4(ip1);
   const ip1v6 = getIPv6(ip1);
