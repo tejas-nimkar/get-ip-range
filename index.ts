@@ -34,8 +34,9 @@ const getRangev4 = (ip1: string, ip2: string) => {
     throw new Error(`Too many IPs in range. Total number: ${totalIPs}. Max count is ${maxRange}, to increase, set the limit with the MAX_RANGE environment variable`)
   }
 
-  for (firstAddressLong; firstAddressLong <= lastAddressLong; firstAddressLong++)
+  // for (firstAddressLong; firstAddressLong <= lastAddressLong; firstAddressLong++)
     ips.push(fromLong(firstAddressLong));
+    ips.push(fromLong(lastAddressLong));
 
   return ips;
 };
